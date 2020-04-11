@@ -5,6 +5,7 @@ import { attributesDemo } from './attributes';
 import { components } from './components';
 import { observablesDemo } from './observables';
 import { counter } from './state';
+import { eventDemo } from './events'; 
 
 import './demos.css'
 
@@ -24,6 +25,7 @@ export const demoApp = () => div().pipe(
     withHeading('Styling & Classes', stylingAndClasses()),
     withHeading('Attributes', attributesDemo()),
     withHeading('Observables', observablesDemo()),
+    withHeading('Events', eventDemo()),
     withHeading('Local State', counter()),
   ),
 );

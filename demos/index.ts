@@ -1,9 +1,10 @@
 import { div, h1, h3, children, classes, Component } from 'rxfm';
 import { helloWorld } from './hello-world';
 import { stylingAndClasses } from './styling-and-classes';
+import { attributesDemo } from './attributes';
+import { components } from './components';
 
 import './demos.css'
-import { attributesDemo } from './attributes';
 
 const withHeading = (heading: string, component: Component<any>) => div().pipe(
   children(
@@ -17,6 +18,7 @@ export const demoApp = () => div().pipe(
     h1().pipe(classes('underline'), children('Welcome to RxFM!')),
     'Have a look at the exaples below and view their code in the \'demos\' folder!',
     withHeading('Hello World', helloWorld()),
+    withHeading('Components', components()),
     withHeading('Styling & Classes', stylingAndClasses()),
     withHeading('Attributes', attributesDemo()),
   ),

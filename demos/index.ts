@@ -6,6 +6,7 @@ import { components } from './components';
 import { observablesDemo } from './observables';
 import { counter } from './state';
 import { eventDemo } from './events'; 
+import { todoApp } from './store';
 
 import './demos.css'
 
@@ -18,8 +19,12 @@ const withHeading = (heading: string, component: Component<any>) => div().pipe(
 
 export const demoApp = () => div().pipe(
   children(
-    h1().pipe(classes('underline'), children('Welcome to RxFM!')),
-    'Have a look at the exaples below and view their code in the \'demos\' folder!',
+    div().pipe(
+      children(
+        h1().pipe(classes('underline'), children('Welcome to RxFM!')),
+        'Have a look at the exaples below and view their code in the \'demos\' folder!',
+      )
+    ),
     withHeading('Hello World', helloWorld()),
     withHeading('Components', components()),
     withHeading('Styling & Classes', stylingAndClasses()),
@@ -27,5 +32,6 @@ export const demoApp = () => div().pipe(
     withHeading('Observables', observablesDemo()),
     withHeading('Events', eventDemo()),
     withHeading('Local State', counter()),
+    withHeading('Store', todoApp()),
   ),
 );

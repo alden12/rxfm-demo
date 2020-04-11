@@ -1,7 +1,6 @@
 import { div, children, addToBody } from 'rxfm';
+import { demoApp } from './demos';
 
-const app = () => div().pipe(
-  children('Hello, world!'),
-);
+import './style.css';
 
-addToBody(app);
+addToBody(demoApp);

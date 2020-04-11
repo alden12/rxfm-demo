@@ -1,21 +1,21 @@
-import { div, h1, h3, children, classes } from 'rxfm';
+import { div, h1, h3, children, classes, Component } from 'rxfm';
 import { helloWorld } from './hello-world';
+import { stylingAndClasses } from './styling-and-classes';
 
 import './demos.css'
 
-const heading = (text: string) => h3().pipe(
-  classes('underline'),
-  children(text),
+const withHeading = (heading: string, component: Component<any>) => div().pipe(
+  children(
+    h3().pipe(classes('underline'), children(heading)),
+    component,
+  ),
 );
 
 export const demoApp = () => div().pipe(
   children(
-    h1().pipe(
-      classes('underline'),
-      children('Welcome to RxFM!'),
-    ),
+    h1().pipe(classes('underline'), children('Welcome to RxFM!')),
     'Have a look at the exaples below and view their code in the \'demos\' folder!',
-    heading('Hello World'),
-    helloWorld(),
+    withHeading('Hello World', helloWorld()),
+    withHeading('Styling & Classes', stylingAndClasses()),
   ),
 );

@@ -3,6 +3,7 @@ import { helloWorld } from './hello-world';
 import { stylingAndClasses } from './styling-and-classes';
 
 import './demos.css'
+import { attributesDemo } from './attributes';
 
 const withHeading = (heading: string, component: Component<any>) => div().pipe(
   children(
@@ -17,5 +18,6 @@ export const demoApp = () => div().pipe(
     'Have a look at the exaples below and view their code in the \'demos\' folder!',
     withHeading('Hello World', helloWorld()),
     withHeading('Styling & Classes', stylingAndClasses()),
+    withHeading('Attributes', attributesDemo()),
   ),
 );

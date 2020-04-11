@@ -3,6 +3,7 @@ import { helloWorld } from './hello-world';
 import { stylingAndClasses } from './styling-and-classes';
 import { attributesDemo } from './attributes';
 import { components } from './components';
+import { observablesDemo } from './observables';
 
 import './demos.css'
 
@@ -21,5 +22,6 @@ export const demoApp = () => div().pipe(
     withHeading('Components', components()),
     withHeading('Styling & Classes', stylingAndClasses()),
     withHeading('Attributes', attributesDemo()),
+    withHeading('Observables', observablesDemo()),
   ),
 );
